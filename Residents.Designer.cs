@@ -44,10 +44,10 @@
             lblGreetings = new Label();
             tabPage2 = new TabPage();
             label8 = new Label();
-            listView1 = new ListView();
+            lstComplaintsAndReviews = new ListView();
             label7 = new Label();
             roundedPanel4 = new WindowsFormsApp1.RoundedPanel();
-            textBox1 = new TextBox();
+            txtComplaintsAndReviews = new TextBox();
             btnSubmit = new Button();
             cmbComplaintsAndReview = new ComboBox();
             label6 = new Label();
@@ -259,7 +259,7 @@
             // tabPage2
             // 
             tabPage2.Controls.Add(label8);
-            tabPage2.Controls.Add(listView1);
+            tabPage2.Controls.Add(lstComplaintsAndReviews);
             tabPage2.Controls.Add(label7);
             tabPage2.Controls.Add(roundedPanel4);
             tabPage2.Controls.Add(label5);
@@ -284,14 +284,14 @@
             label8.TabIndex = 5;
             label8.Text = "Nothing submitted yet";
             // 
-            // listView1
+            // lstComplaintsAndReviews
             // 
-            listView1.Location = new Point(286, 100);
-            listView1.Margin = new Padding(3, 2, 3, 2);
-            listView1.Name = "listView1";
-            listView1.Size = new Size(610, 99);
-            listView1.TabIndex = 4;
-            listView1.UseCompatibleStateImageBehavior = false;
+            lstComplaintsAndReviews.Location = new Point(286, 100);
+            lstComplaintsAndReviews.Margin = new Padding(3, 2, 3, 2);
+            lstComplaintsAndReviews.Name = "lstComplaintsAndReviews";
+            lstComplaintsAndReviews.Size = new Size(471, 99);
+            lstComplaintsAndReviews.TabIndex = 4;
+            lstComplaintsAndReviews.UseCompatibleStateImageBehavior = false;
             // 
             // label7
             // 
@@ -307,7 +307,7 @@
             // roundedPanel4
             // 
             roundedPanel4.BackColor = Color.White;
-            roundedPanel4.Controls.Add(textBox1);
+            roundedPanel4.Controls.Add(txtComplaintsAndReviews);
             roundedPanel4.Controls.Add(btnSubmit);
             roundedPanel4.Controls.Add(cmbComplaintsAndReview);
             roundedPanel4.Controls.Add(label6);
@@ -317,14 +317,14 @@
             roundedPanel4.Size = new Size(219, 271);
             roundedPanel4.TabIndex = 2;
             // 
-            // textBox1
+            // txtComplaintsAndReviews
             // 
-            textBox1.Location = new Point(17, 62);
-            textBox1.Margin = new Padding(3, 2, 3, 2);
-            textBox1.Multiline = true;
-            textBox1.Name = "textBox1";
-            textBox1.Size = new Size(185, 169);
-            textBox1.TabIndex = 3;
+            txtComplaintsAndReviews.Location = new Point(17, 62);
+            txtComplaintsAndReviews.Margin = new Padding(3, 2, 3, 2);
+            txtComplaintsAndReviews.Multiline = true;
+            txtComplaintsAndReviews.Name = "txtComplaintsAndReviews";
+            txtComplaintsAndReviews.Size = new Size(185, 169);
+            txtComplaintsAndReviews.TabIndex = 3;
             // 
             // btnSubmit
             // 
@@ -337,6 +337,7 @@
             btnSubmit.TabIndex = 2;
             btnSubmit.Text = "Submit";
             btnSubmit.UseVisualStyleBackColor = false;
+            btnSubmit.Click += btnSubmit_Click;
             // 
             // cmbComplaintsAndReview
             // 
@@ -794,7 +795,7 @@
         private Label label5;
         private Button button1;
         private ComboBox comboBox1;
-        private ListView listView1;
+        private ListView lstComplaintsAndReviews;
         private Label label7;
         private Label label8;
         private Label lblAddress;
@@ -817,7 +818,7 @@
         private ListBox LstAddressSaved;
         private Label lblAddressSaved;
         private PictureBox pictureBox2;
-        private TextBox textBox1;
+        private TextBox txtComplaintsAndReviews;
         private ComboBox cmbComplaintsAndReview;
         private Button btnSubmit;
     }

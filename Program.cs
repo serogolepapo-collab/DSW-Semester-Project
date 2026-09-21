@@ -12,6 +12,8 @@ namespace DSW_Semester_Project
             // see https://aka.ms/applicationconfiguration.
             ApplicationConfiguration.Initialize();
             UserData.SetUpFile();
+            ComplaintData.SetUpFile();
+
             Application.Run(new FrmSmartWasteRecycling());
         }
     }

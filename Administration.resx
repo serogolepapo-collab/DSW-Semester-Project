@@ -123,31 +123,13 @@
   <metadata name="backgroundWorker2.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
     <value>211, 17</value>
   </metadata>
-  <metadata name="ID.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-    <value>True</value>
-  </metadata>
   <metadata name="ResidentName.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
     <value>True</value>
   </metadata>
-  <metadata name="Address.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-    <value>True</value>
-  </metadata>
-  <metadata name="ID.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-    <value>True</value>
-  </metadata>
-  <metadata name="ResidentName.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+  <metadata name="email.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
     <value>True</value>
   </metadata>
   <metadata name="Address.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-    <value>True</value>
-  </metadata>
-  <metadata name="Issue.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-    <value>True</value>
-  </metadata>
-  <metadata name="Status.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-    <value>True</value>
-  </metadata>
-  <metadata name="Date.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
     <value>True</value>
   </metadata>
   <metadata name="Issue.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
@@ -163,7 +145,7 @@
   <data name="pictureBox1.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAABD8AAAF3CAYAAACi+uDoAAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAS
-        cgAAEnIBXmVb4wAA/7JJREFUeF58/Xe0Z1lVLgz7z/eNO97vvfp6VUJ3V3VX527onBN0k1UkCAqmq6gI
+        cQAAEnEB89x6jgAA/7JJREFUeF58/Xe0Z1lVLgz7z/eNO97vvfp6VUJ3V3VX527onBN0k1UkCAqmq6gI
         igEkiwm9eq96DZizYsCrCCpgQEAFyTk3XeGcU9VdHerkfE5VN/Mbcz7PM+dc+xTvb4w1dvjtvdaaOayw
         v2zu6KzNHp2xuWMzNnPUyyyOczN2ZG7WZmZn7cjsDI+zdmQGZebIrM3MzEWZnTka17NHjkaZOTLH41Gb
         8f/4nN/3dw/PzKDMztihmRk7OIOjyuGZ2Twenp2L45EZf3fOjhzxelDvkSMqx6LMzPjR20IfDh/xttjn
@@ -9901,7 +9883,7 @@
   <data name="pictureBox2.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAApkAAABrCAYAAAA8aplpAAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAS
-        cgAAEnIBXmVb4wAA/7JJREFUeF6M/QWUHEeyNgzv++1dNImZNSRmsFiywLRmZmZmy5Y0IqPMzGyv7TWs
+        cQAAEnEB89x6jgAA/7JJREFUeF6M/QWUHEeyNgzv++1dNImZNSRmsFiywLRmZmZmy5Y0IqPMzGyv7TWs
         cc1rRhmEg+LhZh6Qnv8EZWWPfO/555w8VV3TXUmREU9ARv4h2ZxBNJtAJBtHJBNDJBVFJBlFLBnTEkc8
         EUecrqkY4qmEK/S/aCKOWJLuE4glEogmk4inUkjQNZnSQvf6HS70mxiiVFJWonmF2iD3ES6xdBSxVJSv
         9DyWjknhttL/4lpi2lYqCa43nqI2UR/0M/1f2xBLy++sDVyPq4NKGLF0BDFrh7tqe6idbqyoT3HEeEz+

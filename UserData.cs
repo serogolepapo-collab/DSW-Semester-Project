@@ -203,6 +203,43 @@ namespace DSW_Semester_Project
             }
         }
 
+        // Every resident account - used by the admin dashboard's grid.
+        public static List<Resident> GetAllResidents()
+        {
+            List<Resident> results = new List<Resident>();
+
+            if (File.Exists(fileName) == false)
+            {
+                return results;
+            }
+
+            string[] lines = File.ReadAllLines(fileName);
+
+            foreach (string line in lines)
+            {
+                if (line == "")
+                {
+                    continue;
+                }
+
+                string[] parts = line.Split('|');
+
+                if (parts.Length < 6)
+                {
+                    continue;
+                }
+
+                string role = parts[3];
+
+                if (role == "Resident")
+                {
+                    Resident newResident = new Resident(parts[0], parts[1], parts[2], parts[4], parts[5]);
+                    results.Add(newResident);
+                }
+            }
+
+            return results;
+        }
 
 
     }

@@ -16,9 +16,17 @@ namespace DSW_Semester_Project
         {
             InitializeComponent();
             currentAdmin = admin;
+            LoadDashboardData();
+
             lblWelcome.Text = "Hello, " + currentAdmin.FullName;
         }
 
+        private void LoadDashboardData()
+        {
+            LoadComplaints();
+            LoadResidents();
+        }
+        
 
         private void Form1_Load(object sender, EventArgs e)
         {
@@ -49,6 +57,32 @@ namespace DSW_Semester_Project
         //    Administration adminForm = new Administration();
         //    adminForm.Show();
         //}
+
+        private void LoadComplaints()
+        {
+            dgvComplaints.Rows.Clear();
+
+            List<Complaint> allComplaints = ComplaintData.GetAllComplaints();
+
+            foreach (Complaint residentComplaint in allComplaints)
+            {
+                dgvComplaints.Rows.Add(residentComplaint.Type, residentComplaint.Status, residentComplaint.DateSubmitted.ToString("dd MMM yyyy"));
+            }
+        }
+
+        private void LoadResidents()
+        {
+            dgvResident.Rows.Clear();
+
+            List<Resident> allResidents = UserData.GetAllResidents();
+            int idCounter = 1;
+
+            foreach (Resident resident in allResidents)
+            {
+                dgvResident.Rows.Add(idCounter, resident.FullName, resident.Address, resident.Email);
+                idCounter++;
+            }
+        }
 
 
     }

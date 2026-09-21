@@ -14,9 +14,9 @@ namespace DSW_Semester_Project
             createAccount.Show();
 
             this.Hide();
-
+            
         }
-
+        
         private void btnLogin_Click(object sender, EventArgs e)
         {
             string typedName = txtUserName.Text.Trim();

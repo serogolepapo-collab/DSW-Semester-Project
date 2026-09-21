@@ -30,6 +30,8 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Administration));
             panel1 = new Panel();
+            btnSignOut = new Button();
+            lblWelcome = new Label();
             btnResidents = new Button();
             btnCollection = new Button();
             btnRecycling = new Button();
@@ -40,25 +42,23 @@
             backgroundWorker2 = new System.ComponentModel.BackgroundWorker();
             groupBox1 = new GroupBox();
             label2 = new Label();
-            dataGridViewResident = new DataGridView();
-            ID = new DataGridViewTextBoxColumn();
-            ResidentName = new DataGridViewTextBoxColumn();
-            Address = new DataGridViewTextBoxColumn();
+            dgvResident = new DataGridView();
             groupBox2 = new GroupBox();
-            dataGridView1 = new DataGridView();
+            dgvComplaints = new DataGridView();
             Issue = new DataGridViewTextBoxColumn();
             Status = new DataGridViewTextBoxColumn();
             Date = new DataGridViewTextBoxColumn();
             label3 = new Label();
             pictureBox1 = new PictureBox();
             pictureBox2 = new PictureBox();
-            lblWelcome = new Label();
-            btnSignOut = new Button();
+            ResidentName = new DataGridViewTextBoxColumn();
+            email = new DataGridViewTextBoxColumn();
+            Address = new DataGridViewTextBoxColumn();
             panel1.SuspendLayout();
             groupBox1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)dataGridViewResident).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)dgvResident).BeginInit();
             groupBox2.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)dataGridView1).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)dgvComplaints).BeginInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox2).BeginInit();
             SuspendLayout();
@@ -78,6 +78,29 @@
             panel1.Name = "panel1";
             panel1.Size = new Size(219, 539);
             panel1.TabIndex = 0;
+            // 
+            // btnSignOut
+            // 
+            btnSignOut.BackColor = Color.FromArgb(0, 64, 0);
+            btnSignOut.ForeColor = Color.White;
+            btnSignOut.Location = new Point(53, 493);
+            btnSignOut.Margin = new Padding(3, 2, 3, 2);
+            btnSignOut.Name = "btnSignOut";
+            btnSignOut.Size = new Size(82, 22);
+            btnSignOut.TabIndex = 7;
+            btnSignOut.Text = "→ Sign Out";
+            btnSignOut.UseVisualStyleBackColor = false;
+            btnSignOut.Click += btnSignOut_Click;
+            // 
+            // lblWelcome
+            // 
+            lblWelcome.AutoSize = true;
+            lblWelcome.ForeColor = SystemColors.ButtonHighlight;
+            lblWelcome.Location = new Point(66, 471);
+            lblWelcome.Name = "lblWelcome";
+            lblWelcome.Size = new Size(57, 15);
+            lblWelcome.TabIndex = 6;
+            lblWelcome.Text = "Welcome";
             // 
             // btnResidents
             // 
@@ -158,7 +181,7 @@
             // groupBox1
             // 
             groupBox1.Controls.Add(label2);
-            groupBox1.Controls.Add(dataGridViewResident);
+            groupBox1.Controls.Add(dgvResident);
             groupBox1.Location = new Point(257, 326);
             groupBox1.Margin = new Padding(3, 2, 3, 2);
             groupBox1.Name = "groupBox1";
@@ -179,43 +202,22 @@
             label2.TabIndex = 1;
             label2.Text = "ResidentList";
             // 
-            // dataGridViewResident
+            // dgvResident
             // 
-            dataGridViewResident.BackgroundColor = Color.FromArgb(0, 64, 0);
-            dataGridViewResident.BorderStyle = BorderStyle.Fixed3D;
-            dataGridViewResident.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridViewResident.Columns.AddRange(new DataGridViewColumn[] { ID, ResidentName, Address });
-            dataGridViewResident.Location = new Point(17, 48);
-            dataGridViewResident.Margin = new Padding(3, 2, 3, 2);
-            dataGridViewResident.Name = "dataGridViewResident";
-            dataGridViewResident.RowHeadersWidth = 51;
-            dataGridViewResident.Size = new Size(375, 141);
-            dataGridViewResident.TabIndex = 0;
-            // 
-            // ID
-            // 
-            ID.HeaderText = "ID";
-            ID.MinimumWidth = 6;
-            ID.Name = "ID";
-            ID.Width = 125;
-            // 
-            // ResidentName
-            // 
-            ResidentName.HeaderText = "Resident Name";
-            ResidentName.MinimumWidth = 6;
-            ResidentName.Name = "ResidentName";
-            ResidentName.Width = 125;
-            // 
-            // Address
-            // 
-            Address.HeaderText = "Address";
-            Address.MinimumWidth = 6;
-            Address.Name = "Address";
-            Address.Width = 125;
+            dgvResident.BackgroundColor = Color.FromArgb(0, 64, 0);
+            dgvResident.BorderStyle = BorderStyle.Fixed3D;
+            dgvResident.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            dgvResident.Columns.AddRange(new DataGridViewColumn[] { ResidentName, email, Address });
+            dgvResident.Location = new Point(17, 48);
+            dgvResident.Margin = new Padding(3, 2, 3, 2);
+            dgvResident.Name = "dgvResident";
+            dgvResident.RowHeadersWidth = 51;
+            dgvResident.Size = new Size(375, 141);
+            dgvResident.TabIndex = 0;
             // 
             // groupBox2
             // 
-            groupBox2.Controls.Add(dataGridView1);
+            groupBox2.Controls.Add(dgvComplaints);
             groupBox2.Controls.Add(label3);
             groupBox2.Location = new Point(756, 326);
             groupBox2.Margin = new Padding(3, 2, 3, 2);
@@ -226,19 +228,19 @@
             groupBox2.TabStop = false;
             groupBox2.Text = "Compliants";
             // 
-            // dataGridView1
+            // dgvComplaints
             // 
-            dataGridView1.BackgroundColor = Color.FromArgb(0, 64, 0);
-            dataGridView1.BorderStyle = BorderStyle.Fixed3D;
-            dataGridView1.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridView1.Columns.AddRange(new DataGridViewColumn[] { Issue, Status, Date });
-            dataGridView1.GridColor = Color.FromArgb(0, 64, 0);
-            dataGridView1.Location = new Point(22, 48);
-            dataGridView1.Margin = new Padding(3, 2, 3, 2);
-            dataGridView1.Name = "dataGridView1";
-            dataGridView1.RowHeadersWidth = 51;
-            dataGridView1.Size = new Size(375, 141);
-            dataGridView1.TabIndex = 1;
+            dgvComplaints.BackgroundColor = Color.FromArgb(0, 64, 0);
+            dgvComplaints.BorderStyle = BorderStyle.Fixed3D;
+            dgvComplaints.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            dgvComplaints.Columns.AddRange(new DataGridViewColumn[] { Issue, Status, Date });
+            dgvComplaints.GridColor = Color.FromArgb(0, 64, 0);
+            dgvComplaints.Location = new Point(22, 48);
+            dgvComplaints.Margin = new Padding(3, 2, 3, 2);
+            dgvComplaints.Name = "dgvComplaints";
+            dgvComplaints.RowHeadersWidth = 51;
+            dgvComplaints.Size = new Size(375, 141);
+            dgvComplaints.TabIndex = 1;
             // 
             // Issue
             // 
@@ -294,28 +296,24 @@
             pictureBox2.TabIndex = 3;
             pictureBox2.TabStop = false;
             // 
-            // lblWelcome
+            // ResidentName
             // 
-            lblWelcome.AutoSize = true;
-            lblWelcome.ForeColor = SystemColors.ButtonHighlight;
-            lblWelcome.Location = new Point(66, 471);
-            lblWelcome.Name = "lblWelcome";
-            lblWelcome.Size = new Size(57, 15);
-            lblWelcome.TabIndex = 6;
-            lblWelcome.Text = "Welcome";
+            ResidentName.HeaderText = "Resident Name";
+            ResidentName.MinimumWidth = 6;
+            ResidentName.Name = "ResidentName";
+            ResidentName.Width = 125;
             // 
-            // btnSignOut
+            // email
             // 
-            btnSignOut.BackColor = Color.FromArgb(0, 64, 0);
-            btnSignOut.ForeColor = Color.White;
-            btnSignOut.Location = new Point(53, 493);
-            btnSignOut.Margin = new Padding(3, 2, 3, 2);
-            btnSignOut.Name = "btnSignOut";
-            btnSignOut.Size = new Size(82, 22);
-            btnSignOut.TabIndex = 7;
-            btnSignOut.Text = "→ Sign Out";
-            btnSignOut.UseVisualStyleBackColor = false;
-            btnSignOut.Click += btnSignOut_Click;
+            email.HeaderText = "Email";
+            email.Name = "email";
+            // 
+            // Address
+            // 
+            Address.HeaderText = "Address";
+            Address.MinimumWidth = 6;
+            Address.Name = "Address";
+            Address.Width = 125;
             // 
             // Administration
             // 
@@ -335,10 +333,10 @@
             panel1.PerformLayout();
             groupBox1.ResumeLayout(false);
             groupBox1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)dataGridViewResident).EndInit();
+            ((System.ComponentModel.ISupportInitialize)dgvResident).EndInit();
             groupBox2.ResumeLayout(false);
             groupBox2.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)dataGridView1).EndInit();
+            ((System.ComponentModel.ISupportInitialize)dgvComplaints).EndInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox2).EndInit();
             ResumeLayout(false);
@@ -357,13 +355,10 @@
         private System.ComponentModel.BackgroundWorker backgroundWorker1;
         private System.ComponentModel.BackgroundWorker backgroundWorker2;
         private GroupBox groupBox1;
-        private DataGridView dataGridViewResident;
+        private DataGridView dgvResident;
         private Label label2;
-        private DataGridViewTextBoxColumn ID;
-        private DataGridViewTextBoxColumn ResidentName;
-        private DataGridViewTextBoxColumn Address;
         private GroupBox groupBox2;
-        private DataGridView dataGridView1;
+        private DataGridView dgvComplaints;
         private Label label3;
         private DataGridViewTextBoxColumn Issue;
         private DataGridViewTextBoxColumn Status;
@@ -372,5 +367,8 @@
         private PictureBox pictureBox2;
         private Label lblWelcome;
         private Button btnSignOut;
+        private DataGridViewTextBoxColumn ResidentName;
+        private DataGridViewTextBoxColumn email;
+        private DataGridViewTextBoxColumn Address;
     }
 }

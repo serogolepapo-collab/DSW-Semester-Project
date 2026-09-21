@@ -143,5 +143,48 @@ namespace DSW_Semester_Project
         {
 
         }
+
+        private void btnSubmit_Click(object sender, EventArgs e)
+        {
+            string type = cmbComplaintsAndReview.SelectedItem.ToString();
+
+            if (cmbComplaintsAndReview.SelectedItem == null)
+            {
+                MessageBox.Show("Please select a type.", "Missing Information",
+                    MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return;
+            }
+
+            if (txtComplaintsAndReviews.Text.Trim() == "")
+            {
+                MessageBox.Show("Please describe your complaint or review.",
+                    "Missing Information", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return;
+            }
+
+            string description = txtComplaintsAndReviews.Text.Trim();
+
+            Complaint newComplaint = new Complaint(type, description, currentResident.Username);
+
+            bool saved = ComplaintData.SaveComplaint(newComplaint);
+
+            if (saved == false)
+            {
+                return;
+            }
+
+            // Show it immediately in "Your submissions"
+            ListViewItem item = new ListViewItem(type);
+            item.SubItems.Add(description);
+            item.SubItems.Add(newComplaint.DateSubmitted.ToString("dd MMM yyyy"));
+            lstComplaintsAndReviews.Items.Add(item);
+
+            cmbComplaintsAndReview.SelectedIndex = -1;
+            txtComplaintsAndReviews.Text = "";
+
+            MessageBox.Show("Thank you! Your submission has been recorded.",
+                "Submitted", MessageBoxButtons.OK, MessageBoxIcon.Information);
+
+        }
     }
 }
